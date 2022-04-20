@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css?family=Fredoka+One');
+
+#pseudonym, #title, #body {
+        background: transparent;
+        resize: none;
+        border: 0 none;
+        outline: none;
+}
+
+.textbox {
+    text-align: center;
+}
+
+::-webkit-input-placeholder {
+    text-align: center;
+  }
+
+  
+
+  body {
+    text-align: center;
+    justify-content: center;
+    background-color: #fdfefa;
+    flex-flow: row wrap;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: right;
+    float: right;
+    flex-flow: row wrap;
+    max-width: 500px;
+    margin: 2rem 0 0;
+  }
+  
+  :focus {
+    outline: none;
+  }
+  
+  button {
+    font-family: 'Fredoka One', cursive;
+    border: 2px solid #302f3a;
+    color: white;
+    position: relative;
+    margin: 2rem 3rem;
+    padding: 1rem 2rem;
+    font-size: 1.15rem;
+    background-color: transparent;
+    cursor: pointer;
+  }
+  
+  button::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: -.6rem;
+    top: -.5rem;
+    z-index: -1;
+    background-color: rgb(164, 164, 164);
+    transition: all 200ms ease-out;
+  }
+  
+  button:hover::before {
+    top: 0;
+    left: 0;
+  }
+  
+  .button--bop:active {
+    transform: translateY(3px);
+  }
+
+  @keyframes flick {
+    0% {
+      transform: translate(0, 0) rotate(0deg) scale(1);
+    }
+    67% {
+      transform: translate(.4rem, -1.8rem) rotate(160deg) scale(.4);
+    }
+    100% {
+      transform: translate(0, 0) rotate(0deg) scale(1);
+    }
+  }
+  
+  @keyframes twist {
+    0% {
+      transform: rotate(0deg);
+    }
+    30% {
+      transform: rotate(60deg);
+    }
+    60% {
+      transform: rotate(-20deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+  
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
