@@ -4,3 +4,5 @@ const bodyParser = require("body-parser");
 const postsController = require('../controllers/posts')
 
 router.get('/', postsController.index)
+
+module.exports = router;
