@@ -12,7 +12,7 @@ module.exports = class Post {
     static get all() {
         return new Promise (async (resolve, reject) => {
             try {
-                let 
+                 
             } catch(err) {
 
             }
