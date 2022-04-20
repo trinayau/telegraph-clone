@@ -24,9 +24,11 @@ module.exports = class Post {
     static findById(id) {
         return new Promise (async (resolve, reject) => {
             try {
-
+                let postData = await db.query(`SELECT * FROM posts WHERE posts.id = $1;`, [ id ]);
+            let post = new Post(postData.rows[0]);
+            resolve (post);
             } catch(err) {
-
+                reject('Post not found');
             }
         });
     };
@@ -34,6 +36,7 @@ module.exports = class Post {
     static async create(bookData) {
         return new Promise(async (resolve, reject) => {
             try {
+         
 
             } catch(err) {
 
