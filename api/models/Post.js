@@ -7,4 +7,8 @@ module.exports = class Post {
         this.author = data.author;
         this.content = data.content;
     };
+
+    static get all() {
+        
+    }
 }
