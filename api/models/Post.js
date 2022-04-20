@@ -33,13 +33,14 @@ module.exports = class Post {
         });
     };
 
-    static async create(bookData) {
+    static async create(postData) {
         return new Promise(async (resolve, reject) => {
             try {
-
-
-            } catch(err) {
-
+                const { title, author, content} = postData;
+                let result = await db.query(`INSERT INTO books (title, year_of_publication, abstract) VALUES ($1, $2, $3) RETURNING *;`, [ title, author, content]);
+                resolve (result.rows[0]);
+            } catch (err) {
+                reject('Book could not be created');
             }
         });
     };
