@@ -20,10 +20,11 @@ async function show(req, res) {
 
 async function create (req, res) {
     try {
-        
+        const book = await Post.create(req.body);
+        res.status(201).json(book)
     } catch(err) {
-
+        res.status(422).json({err})
     }
 }
 
-module.exports = { index, show}
+module.exports = { index, show, create}

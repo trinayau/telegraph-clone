@@ -18,4 +18,24 @@ module.exports = class Post {
             }
         });
     };
+  
+    static findById(id) {
+        return new Promise (async (resolve, reject) => {
+            try {
+
+            } catch(err) {
+
+            }
+        });
+    };
+
+    static async create(bookData) {
+        return new Promise(async (resolve, reject) => {
+            try {
+
+            } catch(err) {
+
+            }
+        });
+    };
 }
