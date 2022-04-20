@@ -12,10 +12,8 @@
 }
 
 ::-webkit-input-placeholder {
-    text-align: center;
+    
   }
-
-  
 
   body {
     text-align: center;
@@ -24,19 +22,12 @@
     flex-flow: row wrap;
   }
   
-  .container {
-    display: flex;
-    justify-content: right;
-    float: right;
-    flex-flow: row wrap;
-    max-width: 500px;
-    margin: 2rem 0 0;
-  }
-  
   :focus {
     outline: none;
   }
   
+/* button styling */
+
   button {
     font-family: 'Fredoka One', cursive;
     border: 2px solid #302f3a;
