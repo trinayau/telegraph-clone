@@ -12,7 +12,9 @@ module.exports = class Post {
     static get all() {
         return new Promise (async (resolve, reject) => {
             try {
-                 
+                let postData = await db.query('SELECT * FROM posts');
+                let posts = postData.rows.map(p => new Post(p));
+                resolve (posts);
             } catch(err) {
 
             }
