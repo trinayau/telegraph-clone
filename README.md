@@ -8,3 +8,10 @@ Making a [Telegra.ph](https://telegra.ph/) clone with [Alfie](https://github.com
 - The user should be able to access their post using that show path even after a server restart
 - Edit and delete functionality is not required
 
+## How to start up Docker
+
+bash _scripts/startDev.sh - put into terminal
+
+## how to tear down Docker
+
+bash _scripts/teardown.sh
