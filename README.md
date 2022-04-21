@@ -10,16 +10,17 @@ Making a [Telegra.ph](https://telegra.ph/) clone with [Alfie](https://github.com
 
 ## How to start up Docker
 
-bash _scripts/startDev.sh - put into terminal
+```bash _scripts/startDev.sh - put into terminal```
 
-## how to tear down Docker
+## How to tear down Docker
 
-bash _scripts/teardown.sh
+```bash _scripts/teardown.sh```
 
 ## Wins & Challenges
 
 ### Wins
 - Posting and retrieving from database works
+- Post shows in browser after posting
 
 
 ### Challenges
