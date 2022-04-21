@@ -16,15 +16,14 @@ bash _scripts/startDev.sh - put into terminal
 
 bash _scripts/teardown.sh
 
-
-## Bugs
-
-
-
 ## Wins & Challenges
 
 ### Wins
-
+- Posting and retrieving from database works
 
 
 ### Challenges
+- Show path functionality not implemented yet, but will be added in the future
+
+## Final Look
+![Final gif of clone website](clone.gif)
