@@ -1,29 +1,77 @@
 const form = document.querySelector("form");
-const title = document.getElementById("titleForm");
-const description = document.getElementById("descriptionForm");
-const content = document.getElementById("contentForm");
-const gif = document.getElementById("gifForm");
+const listOnPage = document.querySelector('.container');
+const API_URL = "http://localhost:3000/posts";
 
-form.addEventListener('click', createPost)
+function listNewPost(postId){
+    fetch(`http://localhost:3000/posts/${postId}`)
+        .then(response => response.json())
+        .then(post => {
+                const div = document.createElement('div');
+                div.classList.add("postContainer")
+                const header = document.createElement('h3');
+                header.textContent = post.title;
+                const contents = document.createElement('p');
+                contents.textContent = post.author;
+                const date = document.createElement('p');
+                date.textContent = post.content;
+                div.appendChild(header);
+                div.appendChild(contents);
+                div.appendChild(date);
+                const postDiv = document.getElementById("newPostDiv")
+                postDiv.appendChild(div);
+                form.style.display = "none";
+            })
+        .catch(error => {
+            console.log(error)
+        });
 
-async function createPost(e){
-    e.preventDefault();
-    try {
-        const options = {
-            method: 'POST',
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(Object.fromEntries(e.target))
-        }
-        
-        const response = await fetch('http://localhost:3000/posts', options);
-
-        const { id, err } = await response.json();
-        if(err) { 
-            throw Error(err) 
-        } else {
-            window.location = `#posts/${id}`
-        }
-    } catch (err) {
-        console.warn(err);
-    }
 }
+form.addEventListener("submit", async(event) => {
+    event.preventDefault();
+    const formData = new FormData(form);
+    const title = formData.get("title");
+    const author = formData.get("author");
+    const content = formData.get("body");
+    const post = {
+        title,
+        author,
+        content
+    };
+    const sentPost = await fetch(API_URL, {
+        method: 'POST',
+        body: JSON.stringify({...post}),
+        headers: {
+            'content-type': 'application/json'
+        },
+    })
+    const newPost = await sentPost.json();
+    listNewPost(newPost.id)
+});
+
+
+// function listAllPosts() {
+//     fetch(API_URL)
+//         .then(response => response.json())
+//         .then(post => {
+//             post.forEach(post => {
+//                 const div = document.createElement('div');
+//                 div.classList.add("postContainer")
+//                 const header = document.createElement('h3');
+//                 header.textContent = post.title;
+//                 const contents = document.createElement('p');
+//                 contents.textContent = post.author;
+//                 const date = document.createElement('p');
+//                 date.textContent = post.content;
+//                 div.appendChild(header);
+//                 div.appendChild(contents);
+//                 div.appendChild(date);
+//                 form.appendChild(div);
+//             });
+//         });
+// }
+
+
+
+
+
+

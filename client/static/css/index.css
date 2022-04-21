@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Fredoka+One');
 
-#pseudonym, #title, #body {
+#author, #title, #body {
         background: transparent;
         resize: none;
         border: 0 none;
@@ -11,9 +11,10 @@
     text-align: center;
 }
 
-::-webkit-input-placeholder {
-    
-  }
+input[type="text"] {
+  margin: 10px 0px 10px 0px;
+  
+}
 
   body {
     text-align: center;
@@ -25,10 +26,15 @@
   :focus {
     outline: none;
   }
+
+  .postContainer {
+    text-align: center;
+    margin-top: 20px;
+  }
   
 /* button styling */
 
-  button {
+/* #submit {
     font-family: 'Fredoka One', cursive;
     border: 2px solid #302f3a;
     color: white;
@@ -40,7 +46,7 @@
     cursor: pointer;
   }
   
-  button::before {
+#submit::before {
     content: '';
     position: absolute;
     width: 100%;
@@ -52,7 +58,7 @@
     transition: all 200ms ease-out;
   }
   
-  button:hover::before {
+#submit:hover::before {
     top: 0;
     left: 0;
   }
@@ -96,4 +102,4 @@
       transform: rotate(360deg);
     }
   }
-  
+   */
