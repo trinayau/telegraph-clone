@@ -11,16 +11,16 @@
 </head>
 
 <body>
+    <div class="textbox pt-5 justify-content-center text-center"></div>
     <form id="myForm">
-        <div class="textbox pt-5 justify-content-center text-center">
-            <input type="text" name="title" id="title" placeholder="Title" class="text-center"> <br>
-            <input type="text"  name="pseudonym" id="pseudonym" placeholder="Create a pseudonym"><br>
-            <input type="text" name="body" id="body" placeholder="What's on your mind..."> <br>
-            <button type="submit" class="button--bop">
-                    Wanna post bro?
-            </button>
-        </div>
+        
+            <input type="text" name="title" id="title" placeholder="Title" class="text-center" required> <br>
+            <input type="text"  name="pseudonym" id="author" placeholder="Create a pseudonym" required><br>
+            <input type="text" name="body" id="body" placeholder="What's on your mind..." required> <br>
+            <input type="submit" id="submit" class=" btn btn-primary button--bop" value="Wanna post bro?" requird>
+                    
     </form>
+</div>
 
 </body>
 

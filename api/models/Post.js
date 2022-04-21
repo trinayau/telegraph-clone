@@ -37,7 +37,7 @@ module.exports = class Post {
         return new Promise(async (resolve, reject) => {
             try {
                 const { title, author, content} = postData;
-                let result = await db.query(`INSERT INTO books (title, year_of_publication, abstract) VALUES ($1, $2, $3) RETURNING *;`, [ title, author, content]);
+                let result = await db.query(`INSERT INTO posts (title, author, content) VALUES ($1, $2, $3) RETURNING *;`, [ title, author, content]);
                 resolve (result.rows[0]);
             } catch (err) {
                 reject('Book could not be created');
