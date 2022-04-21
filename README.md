@@ -15,3 +15,16 @@ bash _scripts/startDev.sh - put into terminal
 ## how to tear down Docker
 
 bash _scripts/teardown.sh
+
+
+## Bugs
+
+
+
+## Wins & Challenges
+
+### Wins
+
+
+
+### Challenges
